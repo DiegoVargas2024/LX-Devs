@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LX Devs - Desarrollo Web Profesional</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-black: #121212;
+            --secondary-gray: #2d2d2d;
+            --light-gray: #e5e7eb;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f9fafb;
+            color: var(--primary-black);
+        }
+        
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary-black) 0%, var(--secondary-gray) 100%);
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .floating-button {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .social-icon:hover {
+            transform: scale(1.1);
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: white;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="bg-gray-900 text-white shadow-lg fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <span class="text-xl font-bold tracking-tighter">LX DEVS</span>
+                    </div>
+                    <div class="hidden md:ml-10 md:flex md:space-x-8">
+                        <a href="#inicio" class="nav-link text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Inicio</a>
+                        <a href="#servicios" class="nav-link text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Servicios</a>
+                        <a href="#proyectos" class="nav-link text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Proyectos</a>
+                        <a href="#contacto" class="nav-link text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Contacto</a>
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center">
+                    <a href="#contacto" class="bg-white text-gray-900 px-4 py-2 rounded-md text-sm font-medium hover:bg-gray-200 transition">Cotiza tu proyecto</a>
+                </div>
+                <div class="-mr-2 flex md:hidden">
+                    <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none" aria-controls="mobile-menu" aria-expanded="false" id="mobile-menu-button">
+                        <span class="sr-only">Abrir menú</span>
+                        <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div class="md:hidden hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#inicio" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Inicio</a>
+                <a href="#servicios" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Servicios</a>
+                <a href="#proyectos" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Proyectos</a>
+                <a href="#contacto" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Contacto</a>
+                <a href="#contacto" class="bg-white text-gray-900 block px-3 py-2 rounded-md text-base font-medium">Cotiza tu proyecto</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section text-white pt-32 pb-20 md:pt-40 md:pb-32" id="inicio">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:grid lg:grid-cols-12 lg:gap-8">
+                <div class="sm:text-center md:max-w-2xl md:mx-auto lg:col-span-6 lg:text-left">
+                    <h1 class="text-4xl tracking-tight font-extrabold sm:text-5xl md:text-6xl">
+                        <span class="block">Construimos el</span>
+                        <span class="block text-gray-300">Futuro Digital</span>
+                    </h1>
+                    <p class="mt-3 text-base text-gray-300 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
+                        En LX Devs creamos experiencias web excepcionales que impulsan tu negocio hacia el éxito digital.
+                    </p>
+                    <div class="mt-8 sm:max-w-lg sm:mx-auto sm:text-center lg:text-left lg:mx-0">
+                        <div class="grid grid-cols-2 gap-3">
+                            <a href="#contacto" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-gray-900 bg-white hover:bg-gray-200 md:py-4 md:text-lg md:px-10 transition">
+                                Contáctanos
+                            </a>
+                            <a href="#proyectos" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-gray-700 hover:bg-gray-600 md:py-4 md:text-lg md:px-10 transition">
+                                Nuestros trabajos
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-12 relative sm:max-w-lg sm:mx-auto lg:mt-0 lg:max-w-none lg:mx-0 lg:col-span-6 lg:flex lg:items-center">
+                    <div class="relative mx-auto w-full rounded-lg lg:max-w-md">
+                        <img src="public/image/Cartel.png" alt="Equipo de LX Devs trabajando en diseño web moderno con computadoras en una oficina luminosa" class="w-full rounded-lg shadow-xl" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="py-16 bg-white" id="servicios">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:text-center">
+                <h2 class="text-base text-gray-600 font-semibold tracking-wide uppercase">Servicios</h2>
+                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+                    Soluciones digitales a medida
+                </p>
+                <p class="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
+                    Ofrecemos servicios especializados para llevar tu negocio al siguiente nivel.
+                </p>
+            </div>
+
+            <div class="mt-20">
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Service 1 -->
+                    <div class="bg-gray-50 p-8 rounded-lg shadow-sm hover:shadow-md transition">
+                        <div class="flex items-center justify-center h-12 w-12 rounded-md bg-gray-900 text-white">
+                            <i class="fas fa-laptop-code text-xl"></i>
+                        </div>
+                        <div class="mt-5">
+                            <h3 class="text-lg font-medium text-gray-900">Desarrollo Web</h3>
+                            <p class="mt-2 text-base text-gray-500">
+                                Sitios web personalizados y optimizados para ofrecer la mejor experiencia de usuario.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Service 2 -->
+                    <div class="bg-gray-50 p-8 rounded-lg shadow-sm hover:shadow-md transition">
+                        <div class="flex items-center justify-center h-12 w-12 rounded-md bg-gray-900 text-white">
+                            <i class="fas fa-mobile-alt text-xl"></i>
+                        </div>
+                        <div class="mt-5">
+                            <h3 class="text-lg font-medium text-gray-900">Diseño Responsivo</h3>
+                            <p class="mt-2 text-base text-gray-500">
+                                Diseños que se adaptan perfectamente a cualquier dispositivo y tamaño de pantalla.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Service 3 -->
+                    <div class="bg-gray-50 p-8 rounded-lg shadow-sm hover:shadow-md transition">
+                        <div class="flex items-center justify-center h-12 w-12 rounded-md bg-gray-900 text-white">
+                            <i class="fas fa-shopping-cart text-xl"></i>
+                        </div>
+                        <div class="mt-5">
+                            <h3 class="text-lg font-medium text-gray-900">E-Commerce</h3>
+                            <p class="mt-2 text-base text-gray-500">
+                                Tiendas online personalizadas con todas las herramientas necesarias para vender.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Service 4 -->
+                    <div class="bg-gray-50 p-8 rounded-lg shadow-sm hover:shadow-md transition">
+                        <div class="flex items-center justify-center h-12 w-12 rounded-md bg-gray-900 text-white">
+                            <i class="fas fa-search text-xl"></i>
+                        </div>
+                        <div class="mt-5">
+                            <h3 class="text-lg font-medium text-gray-900">SEO Optimizado</h3>
+                            <p class="mt-2 text-base text-gray-500">
+                                Sitios web desarrollados con las mejores prácticas para posicionamiento en buscadores.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Service 5 -->
+                    <div class="bg-gray-50 p-8 rounded-lg shadow-sm hover:shadow-md transition">
+                        <div class="flex items-center justify-center h-12 w-12 rounded-md bg-gray-900 text-white">
+                            <i class="fas fa-tachometer-alt text-xl"></i>
+                        </div>
+                        <div class="mt-5">
+                            <h3 class="text-lg font-medium text-gray-900">Alta Velocidad</h3>
+                            <p class="mt-2 text-base text-gray-500">
+                                Sitios web ultra rápidos para mantener la atención de tus visitantes.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Service 6 -->
+                    <div class="bg-gray-50 p-8 rounded-lg shadow-sm hover:shadow-md transition">
+                        <div class="flex items-center justify-center h-12 w-12 rounded-md bg-gray-900 text-white">
+                            <i class="fas fa-headset text-xl"></i>
+                        </div>
+                        <div class="mt-5">
+                            <h3 class="text-lg font-medium text-gray-900">Soporte Continuo</h3>
+                            <p class="mt-2 text-base text-gray-500">
+                                Mantenimiento y actualizaciones para que tu sitio siempre funcione perfectamente.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="py-16 bg-gray-100" id="proyectos">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:text-center">
+                <h2 class="text-base text-gray-600 font-semibold tracking-wide uppercase">Portafolio</h2>
+                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+                    Nuestros proyectos recientes
+                </p>
+                <p class="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
+                    Descubre algunos de nuestros trabajos más destacados.
+                </p>
+            </div>
+
+            <div class="mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-sm project-card transition duration-300">
+                    <div class="p-2 bg-gray-900">
+                        <div class="flex space-x-2">
+                            <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                            <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                            <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                        </div>
+                    </div>
+                    <img src="https://placehold.co/800x600" alt="Sitio web de moda elegante con diseño minimalista en tonos negros y blancos" class="w-full h-48 object-cover" />
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-900">Moda Elegante</h3>
+                        <p class="mt-2 text-gray-600">
+                            E-commerce de alta gama para una boutique de moda internacional.
+                        </p>
+                        <div class="mt-4 flex flex-wrap gap-2">
+                            <span class="px-2 py-1 text-xs font-medium bg-gray-100 text-gray-800 rounded">Tienda Online</span>
+                            <span class="px-2 py-1 text-xs font-medium bg-gray-100 text-gray-800 rounded">Diseño Premium</span>
+                        </div>
+                        <a href="#" class="mt-4 inline-flex items-center text-gray-900 font-medium hover:text-gray-700">
+                            Ver proyecto
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-sm project-card transition duration-300">
+                    <div class="p-2 bg-gray-900">
+                        <div class="flex space-x-2">
+                            <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                            <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                            <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                        </div>
+                    </div>
+                    <img src="https://placehold.co/800x600" alt="Landing page moderna para servicio de comida saludable con imágenes vibrantes" class="w-full h-48 object-cover" />
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-900">Comida Saludable</h3>
+                        <p class="mt-2 text-gray-600">
+                            Landing page de alto impacto para un servicio de comida saludable.
+                        </p>
+                        <div class="mt-4 flex flex-wrap gap-2">
+                            <span class="px-2 py-1 text-xs font-medium bg-gray-100 text-gray-800 rounded">Conversión</span>
+                            <span class="px-2 py-1 text-xs font-medium bg-gray-100 text-gray-800 rounded">SEO</span>
+                        </div>
+                        <a href="#" class="mt-4 inline-flex items-center text-gray-900 font-medium hover:text-gray-700">
+                            Ver proyecto
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-sm project-card transition duration-300">
+                    <div class="p-2 bg-gray-900">
+                        <div class="flex space-x-2">
+                            <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                            <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                            <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                        </div>
+                    </div>
+                    <img src="https://placehold.co/800x600" alt="Panel de control moderno para aplicación SaaS con gráficos y métricas" class="w-full h-48 object-cover" />
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-900">SaaS Dashboard</h3>
+                        <p class="mt-2 text-gray-600">
+                            Panel de control avanzado para una plataforma SaaS empresarial.
+                        </p>
+                        <div class="mt-4 flex flex-wrap gap-2">
+                            <span class="px-2 py-1 text-xs font-medium bg-gray-100 text-gray-800 rounded">React</span>
+                            <span class="px-2 py-1 text-xs font-medium bg-gray-100 text-gray-800 rounded">Analytics</span>
+                        </div>
+                        <a href="#" class="mt-4 inline-flex items-center text-gray-900 font-medium hover:text-gray-700">
+                            Ver proyecto
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center">
+                <a href="#" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-gray-800 hover:bg-gray-700 transition">
+                    Ver más proyectos
+                    <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:text-center">
+                <h2 class="text-base text-gray-600 font-semibold tracking-wide uppercase">Testimonios</h2>
+                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+                    Lo que dicen nuestros clientes
+                </p>
+            </div>
+            
+            <div class="mt-16 grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-gray-50 p-8 rounded-lg relative">
+                    <div class="absolute top-0 left-0 transform -translate-y-1/2 ml-8">
+                        <div class="h-12 w-12 rounded-full bg-gray-300 flex items-center justify-center overflow-hidden border-2 border-white shadow">
+                            <img src="https://placehold.co/100x100" alt="Retrato profesional de cliente masculino sonriendo con traje" class="h-full w-full object-cover" />
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <p class="text-gray-600 italic">
+                            "LX Devs transformó completamente mi presencia online. El sitio web que crearon superó todas mis expectativas y ha sido clave para el crecimiento de mi negocio."
+                        </p>
+                        <div class="mt-4">
+                            <p class="font-medium text-gray-900">Carlos Méndez</p>
+                            <p class="text-sm text-gray-500">CEO, Méndez Construcciones</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="bg-gray-50 p-8 rounded-lg relative">
+                    <div class="absolute top-0 left-0 transform -translate-y-1/2 ml-8">
+                        <div class="h-12 w-12 rounded-full bg-gray-300 flex items-center justify-center overflow-hidden border-2 border-white shadow">
+                            <img src="https://placehold.co/100x100" alt="Retrato profesional de cliente femenina sonriente con fondo azul" class="h-full w-full object-cover" />
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <p class="text-gray-600 italic">
+                            "Trabajar con LX Devs fue una experiencia excepcional. Su atención al detalle y conocimiento técnico se nota en cada aspecto del proyecto."
+                        </p>
+                        <div class="mt-4">
+                            <p class="font-medium text-gray-900">Laura Jiménez</p>
+                            <p class="text-sm text-gray-500">Directora de Marketing, VitaSalud</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="bg-gray-50 p-8 rounded-lg relative">
+                    <div class="absolute top-0 left-0 transform -translate-y-1/2 ml-8">
+                        <div class="h-12 w-12 rounded-full bg-gray-300 flex items-center justify-center overflow-hidden border-2 border-white shadow">
+                            <img src="https://placehold.co/100x100" alt="Retrato profesional de empresario mayor con experiencia" class="h-full w-full object-cover" />
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <p class="text-gray-600 italic">
+                            "Como cliente recurrente de LX Devs, cada proyecto supera al anterior. Su capacidad para entender nuestras necesidades es impresionante."
+                        </p>
+                        <div class="mt-4">
+                            <p class="font-medium text-gray-900">Roberto Salinas</p>
+                            <p class="text-sm text-gray-500">Director General, Grupo Salinas</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-16 bg-gray-900 text-white" id="contacto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:grid lg:grid-cols-2 lg:gap-16">
+                <div class="mb-12 lg:mb-0">
+                    <h2 class="text-3xl font-extrabold tracking-tight sm:text-4xl">Contáctanos</h2>
+                    <p class="mt-4 text-lg text-gray-300">
+                        Estamos listos para llevar tu proyecto al siguiente nivel. ¡Hablemos sobre lo que podemos construir juntos!
+                    </p>
+                    
+                    <div class="mt-8">
+                        <div class="flex items-start mb-6">
+                            <div class="flex-shrink-0">
+                                <div class="flex items-center justify-center h-10 w-10 rounded-md bg-gray-700 text-white">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-medium">Correo electrónico</h3>
+                                <div class="mt-2 text-gray-300">lxdevssoportetecnico@gmail.com</div>
+                                <a href="mailto:lxdevssoportetecnico@gmail.com" class="mt-1 inline-flex items-center text-sm font-medium text-gray-400 hover:text-white">
+                                    Envíanos un mensaje
+                                    <i class="fas fa-arrow-right ml-1 text-xs"></i>
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start mb-6">
+                            <div class="flex-shrink-0">
+                                <div class="flex items-center justify-center h-10 w-10 rounded-md bg-gray-700 text-white">
+                                    <i class="fab fa-whatsapp"></i>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-medium">WhatsApp</h3>
+                                <div class="mt-2 text-gray-300">+52 55 6230 0775</div>
+                                <a href="https://wa.me/525562300775?text=Hola%2C%20quiero%20más%20información%20sobre%20un%20proyecto" target="_blank" class="mt-1 inline-flex items-center text-sm font-medium text-gray-400 hover:text-white">
+                                    Envíanos un mensaje
+                                    <i class="fas fa-arrow-right ml-1 text-xs"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-10">
+                        <h3 class="text-lg font-medium">Síguenos</h3>
+                        <div class="mt-4 flex space-x-6">
+                            <a href="https://www.instagram.com/lxdevs_/" class="text-gray-400 hover:text-white social-icon transition" target="_blank">
+                                <i class="fab fa-instagram text-2xl"></i>
+                            </a>
+                            <a href="https://www.tiktok.com/@lx.devs?_t=ZS-8ygZnpbMCvN&_r=1" class="text-gray-400 hover:text-white social-icon transition" target="_blank">
+                                <i class="fab fa-tiktok text-2xl"></i>
+                            </a>
+                            <a href="https://github.com/DiegoVargas2024" class="text-gray-400 hover:text-white social-icon transition" target="_blank">
+                                <i class="fab fa-github text-2xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+<div class="bg-gray-800 rounded-lg p-6 sm:p-8">
+                    <form id="contactForm" class="space-y-6">
+                        
+                        <div class="pt-4">
+                            <a href="https://wa.me/525562300775?text=Hola%2C%20quiero%20más%20información%20sobre%20un%20proyecto" target="_blank"
+   class="w-full flex justify-center items-center px-6 py-3 border border-transparent rounded-md shadow-sm text-base font-medium text-gray-900 bg-white hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white transition">
+    Enviar mensaje
+    <i class="fas fa-paper-plane ml-2"></i>
+</a>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Floating Action Button -->
+    <div class="fixed right-6 bottom-6 z-50">
+        <a href="#contacto" class="floating-button flex items-center justify-center w-14 h-14 rounded-full bg-gray-900 text-white shadow-lg hover:bg-gray-700 transition">
+            <i class="fas fa-paper-plane text-xl"></i>
+        </a>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+            <div class="lg:grid lg:grid-cols-3 lg:gap-8">
+                <div class="space-y-8 lg:col-span-1">
+                    <span class="text-xl font-bold tracking-tighter">LX DEVS</span>
+                    <p class="text-gray-400 text-sm">
+                        Transformando ideas en experiencias digitales excepcionales desde 2025.
+                    </p>
+                    <div class="flex space-x-6">
+                        <a href="https://www.instagram.com/lxdevs_/" class="text-gray-400 hover:text-white social-icon transition" target="_blank">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.tiktok.com/@lx.devs?_t=ZS-8ygZnpbMCvN&_r=1" class="text-gray-400 hover:text-white social-icon transition" target="_blank">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                        <a href="https://wa.me/525562300775" class="text-gray-400 hover:text-white social-icon transition" target="_blank">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="https://github.com/DiegoVargas2024" class="text-gray-400 hover:text-white social-icon transition" target="_blank">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="mt-12 lg:mt-0 lg:col-span-2">
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <div>
+                            <h3 class="text-sm font-semibold text-gray-300 tracking-wider uppercase">Empresa</h3>
+                            <ul class="mt-4 space-y-4">
+                                <li><a href="#" class="text-base text-gray-400 hover:text-white transition">Nosotros</a></li>
+                                <li><a href="#servicios" class="text-base text-gray-400 hover:text-white transition">Servicios</a></li>
+                                <li><a href="#proyectos" class="text-base text-gray-400 hover:text-white transition">Proyectos</a></li>
+                                <li><a href="#contacto" class="text-base text-gray-400 hover:text-white transition">Contacto</a></li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h3 class="text-sm font-semibold text-gray-300 tracking-wider uppercase">Servicios</h3>
+                            <ul class="mt-4 space-y-4">
+                                <li><a href="#servicios" class="text-base text-gray-400 hover:text-white transition">Desarrollo Web</a></li>
+                                <li><a href="#servicios" class="text-base text-gray-400 hover:text-white transition">Diseño UI/UX</a></li>
+                                <li><a href="#servicios" class="text-base text-gray-400 hover:text-white transition">E-Commerce</a></li>
+                                <li><a href="#servicios" class="text-base text-gray-400 hover:text-white transition">SEO</a></li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h3 class="text-sm font-semibold text-gray-300 tracking-wider uppercase">Legal</h3>
+                            <ul class="mt-4 space-y-4">
+                                <li><a href="#" class="text-base text-gray-400 hover:text-white transition">Política de Privacidad</a></li>
+                                <li><a href="#" class="text-base text-gray-400 hover:text-white transition">Términos de Servicio</a></li>
+                                <li><a href="#" class="text-base text-gray-400 hover:text-white transition">Aviso Legal</a></li>
+                                <li><a href="#" class="text-base text-gray-400 hover:text-white transition">Cookies</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-12 border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm">
+                    &copy; 2025 LX Devs. Todos los derechos reservados.
+                </p>
+                <div class="mt-4 md:mt-0">
+                    <p class="text-gray-400 text-sm">
+                        Desarrollado con <i class="fas fa-heart text-red-500"></i> por LX Devs
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Form submission handling
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Here you would typically send the form data to a server
+            // For this example, we'll just show an alert
+            alert('Gracias por tu mensaje. Nos pondremos en contacto contigo pronto.');
+            
+            // Reset the form
+            this.reset();
+        });
+        
+        // Scroll to top button functionality
+        window.addEventListener('scroll', function() {
+            const scrollToTopBtn = document.querySelector('.scroll-to-top');
+            if(window.scrollY > 300) {
+                scrollToTopBtn.classList.remove('hidden');
+            } else {
+                scrollToTopBtn.classList.add('hidden');
+            }
+        });
+    </script>
+</body>
+</html>
